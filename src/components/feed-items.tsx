@@ -8,7 +8,7 @@ import {
   Trash2,
 } from "lucide-react";
 
-import { useFeeds } from "./FeedProvider";
+import { useFeeds } from "./feed-provider";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import {
@@ -30,6 +30,7 @@ import {
   AlertDialogTrigger,
 } from "./ui/alert-dialog";
 import { toast } from "sonner";
+import { SidebarTrigger } from "./ui/sidebar";
 
 export const FeedItems = () => {
   const [isDeleteDialogOpen, setDeleteDialogOpen] = useState(false);
@@ -79,13 +80,9 @@ export const FeedItems = () => {
   };
 
   return (
-    <div className="h-screen overflow-auto">
+    <div className="md:col-span-4 h-screen overflow-auto">
       <div className="sticky top-0 z-10 pl-3 pr-2 py-2 space-x-3 flex items-center justify-between bg-white dark:bg-gray-700 border-b border-slate-200 dark:border-slate-800">
-        {loading ? (
-          <Loader2 className="animate-spin h-4 w-4" />
-        ) : (
-          <Rss className="h-4 w-4" />
-        )}
+        <SidebarTrigger />
         <h2 className="flex-1 line-clamp-1 font-bold">
           {feeds[selectedFeedIndex].title}
         </h2>

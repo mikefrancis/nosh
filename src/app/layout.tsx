@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 import "./globals.css";
 
-import { FeedProvider } from "@/components/FeedProvider";
+import { FeedProvider } from "@/components/feed-provider";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
