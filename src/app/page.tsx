@@ -1,29 +1,21 @@
 "use client";
 
-import { FeedItems } from "@/components/FeedItems";
-import { ItemDisplay } from "@/components/ItemDisplay";
-import { Navigation } from "@/components/Navigation";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
+import { AppSidebar } from "@/components/app-sidebar";
+import { FeedItems } from "@/components/feed-items";
+import { ItemDisplay } from "@/components/item-display";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const Page = () => {
   return (
-    <ResizablePanelGroup direction="horizontal" className="dark:bg-slate-700">
-      <ResizablePanel defaultSize={20}>
-        <Navigation />
-      </ResizablePanel>
-      <ResizableHandle withHandle />
-      <ResizablePanel defaultSize={35}>
-        <FeedItems />
-      </ResizablePanel>
-      <ResizableHandle withHandle />
-      <ResizablePanel>
-        <ItemDisplay />
-      </ResizablePanel>
-    </ResizablePanelGroup>
+    <SidebarProvider>
+      <AppSidebar />
+      <main>
+        <div className="grid grid-cols-1 md:grid-cols-12">
+          <FeedItems />
+          <ItemDisplay />
+        </div>
+      </main>
+    </SidebarProvider>
   );
 };
 

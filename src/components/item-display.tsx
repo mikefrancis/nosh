@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { useFeeds } from "./FeedProvider";
+import { useFeeds } from "./feed-provider";
 import { ExternalLink, Mail, MailOpen, Share } from "lucide-react";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
@@ -26,7 +26,7 @@ export const ItemDisplay = () => {
   };
 
   return selectedItem ? (
-    <article className="h-screen overflow-auto">
+    <article className="md:col-span-8 h-screen overflow-auto">
       <ul className="sticky top-0 p-2 flex bg-white dark:bg-gray-700 items-center justify-end border-b border-slate-200 dark:border-slate-800">
         <li>
           {selectedItem.read ? (
