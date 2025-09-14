@@ -37,7 +37,7 @@ const randomFeeds = [
 ];
 
 export function AppSidebar() {
-  const { feeds, selectFeed, selectedFeedIndex, addFeed } = useFeeds();
+  const { feeds, selectFeed, addFeed } = useFeeds();
   const [isAddFeedDialogOpen, setAddFeedDialogOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [url, setUrl] = useState("");
