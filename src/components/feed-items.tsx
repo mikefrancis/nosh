@@ -1,12 +1,5 @@
 import dayjs from "dayjs";
-import {
-  Loader2,
-  Mail,
-  MoreHorizontal,
-  RefreshCw,
-  Rss,
-  Trash2,
-} from "lucide-react";
+import { Mail, MoreHorizontal, RefreshCw, Trash2 } from "lucide-react";
 
 import { useFeeds } from "./feed-provider";
 import { useState } from "react";
@@ -44,7 +37,7 @@ export const FeedItems = () => {
     readItem,
     readAllItems,
   } = useFeeds();
-  const [loading, setLoading] = useState(false);
+  const [_loading, setLoading] = useState(false);
 
   if (typeof selectedFeedIndex === "undefined") {
     return;
