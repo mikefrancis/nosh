@@ -6,6 +6,7 @@ import "./globals.css";
 
 import { FeedProvider } from "@/components/feed-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Nosh",
@@ -14,11 +15,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="en" className="">
       <body
         className={`${GeistSans.className} text-black dark:text-white antialiased`}
       >
-        <FeedProvider>{children}</FeedProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <FeedProvider>{children}</FeedProvider>
+        </ThemeProvider>
+
         <Toaster />
       </body>
     </html>

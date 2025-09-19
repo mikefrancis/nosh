@@ -16,7 +16,7 @@ const schema = z.object({
 
 export async function GET(request: NextRequest) {
   const result = schema.safeParse(
-    Object.fromEntries(request.nextUrl.searchParams)
+    Object.fromEntries(request.nextUrl.searchParams),
   );
 
   if (!result.success) {
@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
       },
       {
         status: 400,
-      }
+      },
     );
   }
 
@@ -59,27 +59,26 @@ export async function GET(request: NextRequest) {
       link: feed.link,
       items: feed.items
         ? feed.items.map((item) => ({
-            title: item.title,
-            description: item.contentSnippet,
-            link: item.link,
-            author: item.author,
-            pubDate: item.pubDate,
-            content: item.content,
-            read: false,
-          }))
+          title: item.title,
+          description: item.contentSnippet,
+          link: item.link,
+          author: item.author,
+          pubDate: item.pubDate,
+          content: item.content,
+          read: false,
+        }))
         : [],
     });
   } catch (error) {
     return NextResponse.json(
       {
-        message:
-          error instanceof Error
-            ? error.message
-            : "Something went wrong, please try again later",
+        message: error instanceof Error
+          ? error.message
+          : "Something went wrong, please try again later",
       },
       {
         status: 500,
-      }
+      },
     );
   }
 }

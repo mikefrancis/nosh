@@ -2,9 +2,9 @@
 
 import { Feed } from "@/types";
 import {
+  createContext,
   Dispatch,
   PropsWithChildren,
-  createContext,
   useContext,
   useEffect,
   useReducer,
@@ -25,7 +25,7 @@ const initialState: State = {
 
 const FeedContext = createContext(
   {} as State & {
-    selectFeed: (index: number) => void;
+    selectFeed: (index: number | undefined) => void;
     deleteFeed: (index: number) => void;
     selectItem: (index: number) => void;
     readItem: (index: number, read: boolean) => void;
@@ -38,7 +38,7 @@ const FeedContext = createContext(
 type Action =
   | {
       type: "SELECT_FEED";
-      index: number;
+      index: number | undefined;
     }
   | {
       type: "SELECT_ITEM";
@@ -75,6 +75,7 @@ function reducer(state: State, action: Action) {
       return {
         ...state,
         selectedFeedIndex: action.index,
+        selectedItemIndex: undefined,
       };
     }
     case "SELECT_ITEM": {
@@ -239,7 +240,7 @@ export const FeedProvider = ({ children }: PropsWithChildren) => {
     [persistLocalStorage]
   );
 
-  const selectFeed = (index: number) =>
+  const selectFeed = (index: number | undefined) =>
     dispatch({ type: "SELECT_FEED", index });
 
   const deleteFeed = (index: number) =>
