@@ -24,7 +24,7 @@
     "clsx": "^2.1.1",
     "dayjs": "^1.11.18",
     "geist": "^1.5.1",
-    "lucide-react": "^0.544.0",
+    "lucide-react": "^0.545.0",
     "next": "^15.5.4",
     "next-themes": "^0.4.6",
     "react": "^19",
@@ -34,7 +34,7 @@
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^4.1.11"
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
@@ -42,7 +42,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
-    "cypress": "^15.3.0",
+    "cypress": "^15.4.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "15.5.4",
     "postcss": "^8",
