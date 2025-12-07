@@ -1,4 +1,3 @@
-import { GeistSans } from "geist/font/sans";
 import { PropsWithChildren } from "react";
 import { Metadata } from "next";
 
@@ -16,9 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className="">
-      <body
-        className={`${GeistSans.className} text-black dark:text-white antialiased`}
-      >
+      <body className="text-black dark:text-white antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -27,7 +24,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
         >
           <FeedProvider>{children}</FeedProvider>
         </ThemeProvider>
-
         <Toaster />
       </body>
     </html>

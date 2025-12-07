@@ -6,8 +6,12 @@ export const FeedItems = () => {
   const { feeds, selectItem, selectedFeedIndex, selectedItemIndex, readItem } =
     useFeeds();
 
-  return typeof selectedFeedIndex !== "undefined" ? (
-    <div className="bg-background md:col-span-5 flex-1 border-r">
+  if (typeof selectedFeedIndex === "undefined") {
+    return null;
+  }
+
+  return (
+    <div className=" md:col-span-5 flex-1 border-r overflow-scroll">
       <ul id="feed-items">
         {feeds[selectedFeedIndex].items.map((item, i) => (
           <li
@@ -38,5 +42,5 @@ export const FeedItems = () => {
         ))}
       </ul>
     </div>
-  ) : null;
+  );
 };

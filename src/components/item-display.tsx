@@ -26,8 +26,12 @@ export const ItemDisplay = () => {
     }
   };
 
-  return selectedItem ? (
-    <article className="sticky top-0 bg-background md:col-span-7">
+  if (!selectedItem) {
+    return null;
+  }
+
+  return (
+    <article className="bg-background md:col-span-7 overflow-scroll flex-1">
       <div className="p-5 space-y-5">
         <header className="space-y-3">
           <h1 className="text-3xl font-semibold leading-normal text-pretty">
@@ -98,5 +102,5 @@ export const ItemDisplay = () => {
         </main>
       </div>
     </article>
-  ) : null;
+  );
 };

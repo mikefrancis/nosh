@@ -8,11 +8,11 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 const Page = () => {
   return (
-    <SidebarProvider className="">
+    <SidebarProvider>
       <AppSidebar />
-      <SidebarInset className="flex max-h-screen">
+      <SidebarInset className="">
         <SiteHeader />
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-12">
+        <div className="h-screen grid grid-cols-1 md:grid-cols-12">
           <FeedItems />
           <ItemDisplay />
         </div>
