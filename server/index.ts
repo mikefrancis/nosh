@@ -56,7 +56,7 @@ app.get('/api/feed', async (req, res) => {
       description: feed.description,
       link: feed.link,
       items: feed.items
-        ? feed.items.map((item) => ({
+        ? feed.items.map((item: any) => ({
             title: item.title,
             description: item.contentSnippet,
             link: item.link,

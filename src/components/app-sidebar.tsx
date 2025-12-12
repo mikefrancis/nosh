@@ -165,8 +165,6 @@ export function AppSidebar() {
                         className="rounded size-4"
                         src={feed.icon}
                         alt={feed.title}
-                        width={24}
-                        height={24}
                       />
                     ) : (
                       <span className="bg-background text-foreground flex items-center justify-center text-xs rounded size-4">
