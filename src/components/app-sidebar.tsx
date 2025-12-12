@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Loader2, PlusCircle, Soup } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
@@ -50,7 +49,7 @@ export function AppSidebar() {
     setLoading(true);
 
     try {
-      const response = await fetch(`/feed?url=${url}`);
+      const response = await fetch(`/api/feed?url=${url}`);
       if (!response.ok) {
         throw new Error("Error parsing the feed URL.");
       }
@@ -161,7 +160,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={`feed-${i}`}>
                   <SidebarMenuButton onClick={() => selectFeed(i)}>
                     {feed.icon ? (
-                      <Image
+                      <img
                         className="rounded size-4"
                         src={feed.icon}
                         alt={feed.title}

@@ -1,12 +1,10 @@
-"use client";
-
 import { AppSidebar } from "@/components/app-sidebar";
 import { FeedItems } from "@/components/feed-items";
 import { ItemDisplay } from "@/components/item-display";
 import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
-const Page = () => {
+const HomePage = () => {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -21,4 +19,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default HomePage;

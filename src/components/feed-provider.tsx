@@ -1,5 +1,3 @@
-"use client";
-
 import { Feed } from "@/types";
 import {
   createContext,

@@ -55,7 +55,7 @@ const SiteHeader = () => {
     }
 
     try {
-      const response = await fetch(`/feed?url=${feeds[selectedFeedIndex].url}`);
+      const response = await fetch(`/api/feed?url=${feeds[selectedFeedIndex].url}`);
       const data = await response.json();
 
       updateFeed(selectedFeedIndex, data);
