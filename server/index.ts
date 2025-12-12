@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import Parser from 'rss-parser';
 import { z } from 'zod';
-import type { Feed, FeedItem } from '../src/types';
 
 const app = express();
 const PORT = 3001;
@@ -10,7 +9,7 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-const parser: Parser<Feed, FeedItem> = new Parser({
+const parser = new Parser({
   customFields: {
     item: ['contentSnippet'],
   },
