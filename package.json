@@ -8,7 +8,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.15",
@@ -41,7 +41,7 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.24",
     "cypress": "^15.10.0",
-    "eslint": "^10.0.0",
+    "eslint": "^9.0.0",
     "eslint-config-next": "16.1.6",
     "postcss": "^8",
     "tailwindcss": "^4.0.0",
