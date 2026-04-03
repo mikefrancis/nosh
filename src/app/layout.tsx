@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { PropsWithChildren } from "react";
 import { Metadata } from "next";
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           <FeedProvider>{children}</FeedProvider>
         </ThemeProvider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
