@@ -3,6 +3,9 @@ name: Test
 on:
   pull_request:
 
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.id }}
   cancel-in-progress: true
