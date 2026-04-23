@@ -10,9 +10,9 @@ const Page = () => {
 	return (
 		<SidebarProvider>
 			<AppSidebar />
-			<SidebarInset className="">
+			<SidebarInset>
 				<SiteHeader />
-				<div className="h-screen grid grid-cols-1 md:grid-cols-12">
+				<div className="grid grid-cols-1 md:grid-cols-12 flex-1 overflow-hidden">
 					<FeedItems />
 					<ItemDisplay />
 				</div>

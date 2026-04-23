@@ -11,12 +11,11 @@ export const FeedItems = () => {
 	}
 
 	return (
-		<div className=" md:col-span-5 flex-1 border-r overflow-scroll">
+		<div className="md:col-span-5 border-r overflow-y-scroll">
 			<ul id="feed-items">
 				{feeds[selectedFeedIndex].items.map((item, i) => (
 					<li
 						key={`feed-item-${i}`}
-						role="button"
 						className={`relative group border-b p-4 pl-10 ${
 							selectedItemIndex === i ? "bg-accent" : ""
 						}`}
