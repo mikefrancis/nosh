@@ -4,6 +4,7 @@ import {
 	createContext,
 	type Dispatch,
 	type PropsWithChildren,
+	useCallback,
 	useContext,
 	useEffect,
 	useReducer,
@@ -197,19 +198,31 @@ function useReducerWithMiddleware(
 	const [state, dispatch] = useReducer(reducer, initialState, initialiser);
 
 	const aRef = useRef<Action>({ type: "NOOP" });
+	const stateRef = useRef(state);
+	const middlewareFnsRef = useRef(middlewareFns);
 
-	const dispatchWithMiddleware = (action: Action) => {
-		middlewareFns.forEach((middlewareFn) => middlewareFn(action, state));
+	useEffect(() => {
+		stateRef.current = state;
+	}, [state]);
+
+	useEffect(() => {
+		middlewareFnsRef.current = middlewareFns;
+	}, [middlewareFns]);
+
+	const dispatchWithMiddleware = useCallback((action: Action) => {
+		middlewareFnsRef.current.forEach((middlewareFn) => {
+			middlewareFn(action, stateRef.current);
+		});
 
 		aRef.current = action;
 
 		dispatch(action);
-	};
+	}, []);
 
 	useEffect(() => {
-		afterwareFns.forEach((afterwareFn) =>
-			afterwareFn(aRef.current as Action, state),
-		);
+		afterwareFns.forEach((afterwareFn) => {
+			afterwareFn(aRef.current as Action, state);
+		});
 
 		aRef.current = { type: "NOOP" };
 	}, [afterwareFns, state]);
