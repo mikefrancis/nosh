@@ -1,8 +1,7 @@
+import { type NextRequest, NextResponse } from "next/server";
 import Parser from "rss-parser";
 import { z } from "zod";
-
-import { NextRequest, NextResponse } from "next/server";
-import { Feed, FeedItem } from "@/types";
+import type { Feed, FeedItem } from "@/types";
 
 const parser: Parser<Feed, FeedItem> = new Parser({
 	customFields: {

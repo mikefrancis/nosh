@@ -9,7 +9,7 @@ describe("spec", () => {
     cy.get("#feed-items li").first().click({ force: true });
   });
 
-  it.only("subscribes to a random feed", () => {
+  it("subscribes to a random feed", () => {
     cy.visit("http://localhost:3000");
     cy.contains("New feed").click();
 
