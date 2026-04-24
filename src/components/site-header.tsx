@@ -79,7 +79,9 @@ const SiteHeader = () => {
 					<BreadcrumbList>
 						<BreadcrumbItem>
 							<BreadcrumbLink asChild>
-								<button onClick={() => selectFeed(undefined)}>Feeds</button>
+								<button type="button" onClick={() => selectFeed(undefined)}>
+									Feeds
+								</button>
 							</BreadcrumbLink>
 						</BreadcrumbItem>
 						{typeof selectedFeedIndex !== "undefined" ? (

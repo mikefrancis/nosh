@@ -15,13 +15,19 @@ export const FeedItems = () => {
 			<ul id="feed-items">
 				{feeds[selectedFeedIndex].items.map((item, i) => (
 					<li
-						key={`feed-item-${i}`}
+						key={item.link}
 						className={`relative group border-b p-4 pl-10 ${
 							selectedItemIndex === i ? "bg-accent" : ""
 						}`}
 						onClick={() => {
 							selectItem(i);
 							readItem(i, true);
+						}}
+						onKeyDown={(e) => {
+							if (e.key === "Enter" || e.key === " ") {
+								selectItem(i);
+								readItem(i, true);
+							}
 						}}
 					>
 						{!item.read ? (

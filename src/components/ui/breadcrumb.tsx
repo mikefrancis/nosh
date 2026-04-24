@@ -51,11 +51,13 @@ function BreadcrumbLink({
 
 function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
 	return (
+		// biome-ignore lint/a11y/useSemanticElements: shadcn/ui breadcrumb pattern uses span for current page
 		<span
 			data-slot="breadcrumb-page"
 			role="link"
 			aria-disabled="true"
 			aria-current="page"
+			tabIndex={0}
 			className={cn("text-foreground font-normal", className)}
 			{...props}
 		/>

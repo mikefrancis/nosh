@@ -94,7 +94,7 @@ export function AppSidebar() {
 							asChild
 							className="data-[slot=sidebar-menu-button]:!p-1.5"
 						>
-							<a href="#">
+							<a href="/">
 								<Soup className="!size-5" />
 								<span className="text-base font-semibold">Nosh</span>
 							</a>
@@ -163,7 +163,7 @@ export function AppSidebar() {
 							);
 
 							return (
-								<SidebarMenuItem key={`feed-${i}`}>
+								<SidebarMenuItem key={feed.url}>
 									<SidebarMenuButton onClick={() => selectFeed(i)}>
 										{feed.icon ? (
 											<Image
