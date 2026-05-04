@@ -1,7 +1,7 @@
 import { Loader2, PlusCircle, Soup } from "lucide-react";
-import Image from "next/image";
 import { type FormEvent, useState } from "react";
 import { toast } from "sonner";
+
 import { useFeeds } from "@/components/feed-provider";
 import { Button } from "@/components/ui/button";
 import {
@@ -170,7 +170,7 @@ export function AppSidebar() {
 										isActive={i === selectedFeedIndex}
 									>
 										{feed.icon ? (
-											<Image
+											<img
 												className="rounded size-4"
 												src={feed.icon}
 												alt={feed.title}

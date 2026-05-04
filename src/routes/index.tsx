@@ -1,4 +1,4 @@
-"use client";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { AppSidebar } from "@/components/app-sidebar";
 import { FeedItems } from "@/components/feed-items";
@@ -6,7 +6,11 @@ import { ItemDisplay } from "@/components/item-display";
 import { SiteHeader } from "@/components/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
-const Page = () => {
+export const Route = createFileRoute("/")({
+	component: Home,
+});
+
+function Home() {
 	return (
 		<SidebarProvider>
 			<AppSidebar />
@@ -19,6 +23,4 @@ const Page = () => {
 			</SidebarInset>
 		</SidebarProvider>
 	);
-};
-
-export default Page;
+}
