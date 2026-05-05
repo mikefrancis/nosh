@@ -11,7 +11,7 @@ export const FeedItems = () => {
 	}
 
 	return (
-		<div className="md:col-span-5 border-r overflow-y-scroll">
+		<div className="max-w-prose border-r overflow-y-scroll">
 			<ul id="feed-items">
 				{feeds[selectedFeedIndex].items.map((item, i) => (
 					<li

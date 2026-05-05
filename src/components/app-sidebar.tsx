@@ -36,7 +36,7 @@ const randomFeeds = [
 ];
 
 export function AppSidebar() {
-	const { feeds, selectFeed, addFeed } = useFeeds();
+	const { feeds, selectFeed, addFeed, selectedFeedIndex } = useFeeds();
 	const [isAddFeedDialogOpen, setAddFeedDialogOpen] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [url, setUrl] = useState("");
@@ -164,7 +164,10 @@ export function AppSidebar() {
 
 							return (
 								<SidebarMenuItem key={feed.url}>
-									<SidebarMenuButton onClick={() => selectFeed(i)}>
+									<SidebarMenuButton
+										onClick={() => selectFeed(i)}
+										isActive={i === selectedFeedIndex}
+									>
 										{feed.icon ? (
 											<Image
 												className="rounded size-4"
