@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import type { PropsWithChildren } from "react";
 
 import "./globals.css";
@@ -8,6 +9,10 @@ import { FeedProvider } from "@/components/feed-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
+const dmSans = DM_Sans({
+	subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
 	title: "Nosh",
 	description: "Modern RSS reader",
@@ -15,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" className={dmSans.className} suppressHydrationWarning>
 			<body className="text-black dark:text-white antialiased">
 				<ThemeProvider
 					attribute="class"

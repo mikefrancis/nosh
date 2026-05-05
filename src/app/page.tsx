@@ -12,7 +12,7 @@ const Page = () => {
 			<AppSidebar />
 			<SidebarInset>
 				<SiteHeader />
-				<div className="grid grid-cols-1 md:grid-cols-12 flex-1 overflow-hidden">
+				<div className="flex flex-1 overflow-hidden">
 					<FeedItems />
 					<ItemDisplay />
 				</div>

@@ -31,8 +31,8 @@ export const ItemDisplay = () => {
 	}
 
 	return (
-		<article className="bg-background md:col-span-7 overflow-y-auto">
-			<div className="p-5 space-y-5">
+		<article className="bg-background flex-1 overflow-y-auto">
+			<div className="p-5 space-y-5 max-w-prose">
 				<header className="space-y-3">
 					<h1 className="text-3xl font-semibold leading-normal text-pretty">
 						{selectedItem.title}
