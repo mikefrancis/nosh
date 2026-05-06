@@ -42,12 +42,12 @@ export async function GET(request: NextRequest) {
 			const response = await fetch(iconUrl);
 
 			if (response.status !== 200) {
-				throw new Error("Could not get icon");
+				throw new Error(`Could not get icon for feed: ${url}`);
 			}
 
 			icon = iconUrl;
 		} catch (error) {
-			console.log("Error getting icon", error);
+			console.log(`Error getting icon for feed: ${url}`, error);
 		}
 
 		return NextResponse.json({
@@ -69,6 +69,7 @@ export async function GET(request: NextRequest) {
 				: [],
 		});
 	} catch (error) {
+		console.error("Error fetching/parsing feed:", url, error);
 		return NextResponse.json(
 			{
 				message:

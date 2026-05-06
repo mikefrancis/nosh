@@ -300,4 +300,12 @@ export const FeedProvider = ({ children }: PropsWithChildren) => {
 	);
 };
 
-export const useFeeds = () => useContext(FeedContext);
+export const useFeeds = () => {
+	const context = useContext(FeedContext);
+
+	if (!context) {
+		throw new Error("useFeeds must be used within a FeedProvider");
+	}
+
+	return context;
+};
