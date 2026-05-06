@@ -4,7 +4,7 @@ A modern, local-first RSS reader. I built this because I missed iGoogle.
 
 ## Tech stack
 
-- [Next.js](https://nextjs.org) as a framework
+- [TanStack Start](https://tanstack.com/start) as a framework
 - [Tailwind CSS](https://tailwindcss.com) for styling
 - [ShadCN](https://ui.shadcn.com) as a UI component library
 - [Biome](https://biomejs.dev) for linting/formatting

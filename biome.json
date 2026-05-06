@@ -6,6 +6,6 @@
 		}
 	},
 	"files": {
-		"includes": ["src/**/*.{ts,tsx,css}"]
+		"includes": ["src/**/*.{ts,tsx,css}", "!src/routeTree.gen.ts"]
 	}
 }

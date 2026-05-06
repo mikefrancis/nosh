@@ -1,11 +1,11 @@
 {
 	"$schema": "https://ui.shadcn.com/schema.json",
 	"style": "radix-vega",
-	"rsc": true,
+	"rsc": false,
 	"tsx": true,
 	"tailwind": {
 		"config": "",
-		"css": "src/app/globals.css",
+		"css": "src/styles.css",
 		"baseColor": "stone",
 		"cssVariables": true,
 		"prefix": ""
