@@ -1,12 +1,14 @@
 {
 	"name": "nosh",
 	"license": "MIT",
-	"description": "Modern RSS reader",
+	"description": "A modern, local-first RSS reader",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"build": "next build",
 		"dev": "next dev",
+		"e2e:open": "cypress open",
+		"e2e:run": "cypress run",
 		"format": "biome format --write",
 		"lint": "biome check",
 		"start": "next start"
