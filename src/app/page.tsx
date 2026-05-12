@@ -8,9 +8,9 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 const Page = () => {
 	return (
-		<SidebarProvider>
+		<SidebarProvider className="h-svh">
 			<AppSidebar />
-			<SidebarInset>
+			<SidebarInset className="overflow-hidden">
 				<SiteHeader />
 				<div className="flex flex-1 overflow-hidden">
 					<FeedItems />
