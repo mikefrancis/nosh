@@ -7,8 +7,9 @@ import {
 	Outlet,
 	Scripts,
 } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import { FeedProvider } from "@/components/feed-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 
@@ -31,6 +32,16 @@ export const Route = createRootRoute({
 	component: RootComponent,
 });
 
+function ClientOnly({ children }: Readonly<{ children: ReactNode }>) {
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	return mounted ? (children as React.ReactElement) : null;
+}
+
 function RootComponent() {
 	return (
 		<RootDocument>
@@ -46,7 +57,10 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
 				<HeadContent />
 			</head>
 			<body>
-				<FeedProvider>{children}</FeedProvider>
+				<FeedProvider>
+					<ClientOnly>{children}</ClientOnly>
+				</FeedProvider>
+				<Toaster />
 				<Scripts />
 			</body>
 		</html>
